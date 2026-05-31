@@ -4,7 +4,7 @@ import string
 
 app = Flask(__name__)
 
-HTML_TEMPLATE = r"""
+HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -97,8 +97,8 @@ HTML_TEMPLATE = r"""
             const isUpp = /[A-Z]/.test(pwd);
             const isLow = /[a-z]/.test(pwd);
             const isNum = /[0-9]/.test(pwd);
-            const isSym = /[\\W_]/.test(pwd);
-            # const isSym = /[\W_]/.test(pwd);
+            
+            const isSym = /[\W_]/.test(pwd);
 
             updateStatus('req-len', isLen);
             updateStatus('req-upp', isUpp);
@@ -213,6 +213,6 @@ def index():
 import os
 
 if __name__ == '__main__':
-    # Esto permite que Render asigne el puerto automaticamente
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+ # Esto permite que Render asigne el puerto automaticamente
+     port = int(os.environ.get("PORT", 5000))
+     app.run(host='0.0.0.0', port=port)
